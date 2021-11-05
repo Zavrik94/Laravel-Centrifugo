@@ -11,11 +11,11 @@ final class CentrifugoService
 
     public function __construct()
     {
-        $url = config('laravel-centrifugo.url') . '/api';
+        $url = config('centrifugo.url') . '/api';
         $this->client = new Client(
             $url,
-            config('laravel-centrifugo.api_key'),
-            config('laravel-centrifugo.admin_secret')
+            config('centrifugo.api_key'),
+            config('centrifugo.admin_secret')
         );
     }
 
