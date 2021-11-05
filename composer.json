@@ -1,0 +1,30 @@
+{
+  "name": "zavrik/laravel-centrifugo",
+  "version": "1.0",
+  "type": "library",
+  "description": "",
+  "license": "MIT",
+  "require": {
+    "php": "^8.0",
+    "laravel/framework": "^8.0.0",
+    "centrifugal/phpcent": "^4.0.0",
+    "laravel/passport": "^v10.2.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LaravelCentrifugo\\LaravelCentrifugoServiceProvider"
+      ]
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "LaravelCentrifugo\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaravelCentrifugo\\": "src/"
+    }
+  }
+}
