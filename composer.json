@@ -8,7 +8,8 @@
     "php": "^8.0",
     "laravel/framework": "^8.0.0",
     "centrifugal/phpcent": "^4.0.0",
-    "laravel/passport": "^v10.2.0"
+    "laravel/passport": "^v10.2.0",
+    "vinkla/hashids": "^9.1.0"
   },
   "extra": {
     "laravel": {
