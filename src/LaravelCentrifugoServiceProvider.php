@@ -30,12 +30,12 @@ class LaravelCentrifugoServiceProvider extends ServiceProvider
     private function routeConfiguration(): array
     {
         return [
-            'domain' => config('centrifugo.domain'),
+            'domain' => config('centrifugo.url'),
             'namespace' => 'Laravel\Centrifugo\Http\Controllers',
             'prefix' => config('centrifugo.path'),
         ];
     }
-    
+
     public function registerCommands()
     {
         Artisan::starting(function ($artisan) {
