@@ -17,7 +17,7 @@ class AuthGuard implements AuthGuardInterface
     public function __construct(private Parser $parser, private TokenRepository $repository)
     {
         $salt = config('centrifugo.salt');
-        $this->hashids = new Hashids();
+        $this->hashids = new Hashids($salt, 8);
     }
 
     public function auth(Request $request): int
