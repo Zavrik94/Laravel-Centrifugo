@@ -29,4 +29,5 @@ return [
         'X-Forwarded-For',
         'X-Request-Id',
     ],
+    'salt' => env('APP_NAME', 'mxSQHzjyeG'),
 ];

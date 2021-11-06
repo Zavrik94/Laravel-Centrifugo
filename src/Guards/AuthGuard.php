@@ -3,17 +3,21 @@
 namespace LaravelCentrifugo\Guards;
 
 use Exception;
+use Hashids\Hashids;
 use Illuminate\Http\Request;
 use Laravel\Passport\Exceptions\InvalidAuthTokenException;
 use Laravel\Passport\TokenRepository;
 use Lcobucci\JWT\Parser;
 use Lcobucci\JWT\Token\RegisteredClaims;
-use Vinkla\Hashids\Facades\Hashids;
 
 class AuthGuard implements AuthGuardInterface
 {
+    private Hashids $hashids;
+
     public function __construct(private Parser $parser, private TokenRepository $repository)
     {
+        $salt = config('centrifugo.salt');
+        $this->hashids = new Hashids();
     }
 
     public function auth(Request $request): int
@@ -37,11 +41,11 @@ class AuthGuard implements AuthGuardInterface
 
     public function encodeUserId(int $userId): string
     {
-        return Hashids::encode($userId);
+        return $this->hashids->encode($userId);
     }
 
     public function decodeUserId(string $hashedUserId): int
     {
-        return Hashids::decode($hashedUserId)[0];
+        return $this->hashids->decode($hashedUserId)[0];
     }
 }
