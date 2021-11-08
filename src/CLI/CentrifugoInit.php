@@ -3,6 +3,7 @@
 namespace LaravelCentrifugo\CLI;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 
 class CentrifugoInit extends Command
@@ -11,8 +12,9 @@ class CentrifugoInit extends Command
 
     public function handle()
     {
-        $this->setUpJsonConfig();
+        Artisan::call(CentrifugoGenerate::class);
         $this->setUpPhpConfig();
+        $this->setUpJsonConfig();
     }
 
     private function setUpPhpConfig(): void
