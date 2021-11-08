@@ -18,7 +18,8 @@ return [
     'admin_password'    => env('CENTRIFUGO_ADMIN_PASSWORD'),
     'admin_secret'      => env('CENTRIFUGO_ADMIN_SECRET'),
     'api_key'           => env('CENTRIFUGO_API_KEY'),
-    'url'               => env('CENTRIFUGO_APP_DOCKER_URL', 'http://localhost:8000'),
+    'url'               => env('CENTRIFUGO_APP_DOCKER_URL', 'http://centrifugo:8000'),
+    'proxy_url'         => env('CENTRIFUGO_PROXY_DOCKER_URL', 'http://localhost'),
     'allowed_headers'    => [
         'Origin',
         'User-Agent',

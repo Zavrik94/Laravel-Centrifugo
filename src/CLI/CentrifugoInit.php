@@ -41,7 +41,7 @@ class CentrifugoInit extends Command
 
     private function setUrls(array $config): array
     {
-        $appDockerName = config('centrifugo.url');
+        $appDockerName = config('centrifugo.proxy_url');
         $prefix = config('centrifugo.path');
         $config['proxy_connect_endpoint'] = "$appDockerName/$prefix/connect";
         $config['proxy_subscribe_endpoint'] = "$appDockerName/$prefix/subscribe";
