@@ -30,7 +30,7 @@ class LaravelCentrifugoServiceProvider extends ServiceProvider
     private function routeConfiguration(): array
     {
         return [
-            'domain' => config('centrifugo.url'),
+            'domain' => config('centrifugo.proxy_url'),
             'namespace' => 'Laravel\Centrifugo\Http\Controllers',
             'prefix' => config('centrifugo.path'),
         ];
