@@ -31,11 +31,12 @@ class CentrifugoInit extends Command
         $config = $this->setAllowedOrigins($config);
         $config = $this->setAllowedHeaders($config);
         $configJson = json_encode($config);
+        file_put_contents($configJsonPath, $configJson);
         $targetPath = base_path('docker/centrifugo');
         if (!is_dir($targetPath)) {
             mkdir($targetPath);
         }
-        file_put_contents($targetPath.'/config.json', $configJson);
+        File::copy(__DIR__.'/../../stubs/config.json', $targetPath . '/config.json');
     }
 
     private function setUrls(array $config): array
