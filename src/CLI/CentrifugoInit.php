@@ -34,7 +34,7 @@ class CentrifugoInit extends Command
         file_put_contents($configJsonPath, $configJson);
         $targetPath = base_path('docker/centrifugo');
         if (!is_dir($targetPath)) {
-            mkdir($targetPath);
+            mkdir($targetPath, recursive: true);
         }
         File::copy(__DIR__.'/../../stubs/config.json', $targetPath . '/config.json');
     }
