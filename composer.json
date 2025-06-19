@@ -5,12 +5,12 @@
   "description": "",
   "license": "MIT",
   "require": {
-    "php": "^8.0",
+    "php": "^8.2",
     "ext-bcmath": "*",
-    "laravel/framework": "^9.0",
-    "centrifugal/phpcent": "^4.0.0",
-    "laravel/passport": "^v10.2.0",
-    "hashids/hashids": "^4.1"
+    "laravel/framework": "^10.0",
+    "centrifugal/phpcent": "^6.0.1",
+    "laravel/passport": "^v12.4.2",
+    "hashids/hashids": "^5.0"
   },
   "extra": {
     "laravel": {
